@@ -1,0 +1,29 @@
+.navbar {
+  padding-left: 4rem;
+  padding-right: 2rem;
+}
+.nav-item {
+  padding: 0px 10px;
+  position: relative;
+}
+.nav-item a{
+  color: black !important;
+  font-weight: 550;
+  text-decoration: none;
+}
+.nav-item a:hover{
+  color: whitesmoke !important;
+  background-color: #769bd6;
+}
+.nav-item:hover > .dropdown-menu{
+  display:block;
+  animation: ease-in;
+}
+.nav-link {
+  font-size: 1.1rem;
+}
+.nav-link:hover {
+  border-radius: 1em;
+}
+
+
