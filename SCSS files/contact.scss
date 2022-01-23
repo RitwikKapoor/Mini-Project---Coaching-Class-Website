@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import "variables";
+$light-color: #2c0070;
+$dark-color: #1f004f;
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden; 
+  background-color: #e6e6e6;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+header{
+    @include bg-all();
+     nav{
+   @include navbar();
+   .menu-items{
+    @include nav-menu();
+  }
+}
+  h1{
+      font-size: 5rem;
+      color: #f4f4f4;
+      position: relative;
+      left:35%;
+      top:25%;
+    }
+}
+.sticky {
+  position: fixed;
+  background-color: #000;
+}
+.contact-container{
+margin-left: 6em;
+margin-right: 6em;
+margin-top: 3em;
+  h2{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    &::after{
+      @include under();
+      width: 70px;
+    }
+}
+.contact-box{
+display: flex;
+margin-top: 2em;
+background-color: white;
+.contact-form{
+  margin-left: 1em;
+  padding-left: 0.5em;
+  width: 100%;
+  input,textarea{
+    display: block;
+    border: none;
+    width: 95%;
+    border-bottom: 2.5px solid #ddd;
+    padding: 1rem 0;
+    box-shadow:none;
+    margin-bottom: 1rem;
+    margin-top: 1.6rem;
+    font-weight: 500;
+    outline-style: none;
+  }
+  textarea{
+    resize: none
+  }
+  button{
+    @include button(1.4rem);
+    font-weight: 500;
+  }
+  h4{
+    font-size: 3rem;
+    font-weight: 500;
+    &::after{
+      @include under();
+      width: 70px;
+    }
+  }
+}
+}
+}
+.details{
+  .all{
+    margin-top: 7em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: $dark-color;
+    .address{
+      margin: 30px 70px;
+      width: 30rem;
+      text-align: center;
+      .fas{
+        font-size: 7rem;
+      }
+      h4{
+        padding-top: 0.5em;
+        font-size: 2rem;
+      }
+      P{
+        padding-top: 0.5em;
+        font-size: 1.7rem;
+        color: black;
+        font-weight: 600;
+      }
+    }
+  }
+}
+.accordion{
+  margin-left: 6em;
+margin-right: 6em;
+margin-top: 2em;
+max-width: 800px;
+  h2{
+    font-size: 3.5rem;
+     font-weight: 600;
+     padding-bottom: 1em;
+    &::after{
+      @include under();
+      width: 40px;
+    }
+  }
+  .contentBox{
+    padding-top: 1em;
+    .accordion-button{
+      display: block;
+      padding: 15px;
+      background: $dark-color;
+      color: white;
+      font-size: 1.7rem;
+      font-weight: 500;
+      outline: none;
+      border: none;
+      text-align: left;
+      width: 100%;
+      cursor:pointer;
+    }
+    .accordion-button::after{
+        content: "\25be";
+        float: right;
+        transform: scale(1.5);
+        margin-right: 5px;
+        color: white;
+      }
+      .accordion-button--active + .accordion-content{
+        display: block;
+      } 
+      .accordion-button--active::after{
+          content: "\25b4";
+          float: right;
+          transform: scale(1.5);
+          margin-right: 10px;
+          color: white;
+      }
+         .accordion-content{
+        display: none;
+        overflow: auto;
+        padding: 10 20px; 
+        p{
+          font-size: 1.5em;
+          font-weight: 500;
+        }
+    }
+  }
+}
+.footer{
+  background-color: black;
+  margin-top: 10em;
+  padding-top: 2em;
+  padding-bottom: 4em;
+  @include footer-mixin();
+}
+@include copyright();

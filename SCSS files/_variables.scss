@@ -1,0 +1,157 @@
+$light-color: #2c0070;
+$dark-color: #1f004f;
+$light-grey-color: #bab8b8;
+
+@mixin button($size) {
+  display: inline-block;
+  padding: 1em 1.9em;
+  text-decoration: none;
+  border-radius: 40px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  font-size: $size;
+  color: #f4f4f4;
+  background-color: $light-color;
+  &:hover {
+    background-color: $dark-color;
+    transition: background 0.2s ease-in;
+  }
+}
+
+@mixin heading-style() {
+  color: black;
+  font-size: 4.5rem;
+  text-align: center;
+  padding-top: 1em;
+  span {
+    color: $dark-color;
+  }
+}
+@mixin bg-all {
+  background: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
+    url(/img---/bg-other.jpg);
+  background-size: cover;
+  background-position: top;
+  height: 50vh;
+}
+@mixin navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 99;
+  transition: 0.4s ease;
+  .logo-image {
+    height: 7.5rem;
+    width: 18.5rem;
+    margin-left: 6em;
+  }
+}
+@mixin nav-menu {
+  font-size: 1.75rem;
+  display: flex;
+  margin-right: 10em;
+  li {
+    list-style: none;
+    padding: 0 1em;
+    &::after {
+      content: "";
+      transform: scale(0, 1);
+      height: 2px;
+      background-color: #f4f4f4;
+      display: block;
+      transition: 0.2s;
+    }
+    &:hover::after {
+      transform: scale(1, 1);
+    }
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #ebe8e8;
+    font-weight: 500;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+@mixin under {
+  content: "";
+  height: 4px;
+  background-color: $dark-color;
+  display: block;
+  @content;
+}
+@mixin footer-mixin {
+  .footer-whole {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .footer-logo {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 1.5rem;
+      img {
+        height: 10rem;
+        width: 250px;
+      }
+      p {
+        margin-top: 0.8em;
+      }
+    }
+    .footer-link {
+      padding-left: 5em;
+      h3 {
+        color: white;
+        font-weight: 500;
+        font-size: 2.5rem;
+        padding: 0.8em 0em 0.5em 0em;
+      }
+      ul {
+        color: white;
+        list-style: none;
+      }
+      ul > li > a {
+        text-decoration: none;
+        color: white;
+        font-weight: normal;
+        font-size: 1.5rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .footer-contact {
+      color: white;
+      h3 {
+        font-weight: 500;
+        font-size: 2.5rem;
+        padding: 0.8em 0em 0.5em 0em;
+      }
+      p {
+        font-weight: normal;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+@mixin copyright {
+  #footer-copyright {
+    background-color: #1c1c1c;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    h2 {
+      color: white;
+      text-align: center;
+      font-weight: normal;
+      font-size: 2rem;
+    }
+  }
+}
