@@ -50,14 +50,43 @@ $light-grey-color: #bab8b8;
     width: 18.5rem;
     margin-left: 6em;
   }
+
+  .hamburger{
+    background-color: transparent;
+    color: white;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+  .hamburger:focus {
+    outline: none;
+  }
+  .hamburger-close {
+    background-color: transparent;
+    color: white;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+  .hamburger-close:focus {
+    outline: none;
+  }
 }
 @mixin nav-menu {
   font-size: 1.75rem;
   display: flex;
-  margin-right: 10em;
+  flex-wrap: wrap;
+  margin-right: 3.5em; 
   li {
     list-style: none;
-    padding: 0 1em;
+    padding: 0 0.9em;
+    &:focus {
+      outline: none;
+    }
     &::after {
       content: "";
       transform: scale(0, 1);
@@ -151,7 +180,7 @@ $light-grey-color: #bab8b8;
       color: white;
       text-align: center;
       font-weight: normal;
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
   }
 }

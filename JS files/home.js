@@ -2,13 +2,24 @@ window.addEventListener("scroll" , function(){
     let nav = document.getElementById("navbar");
     nav.classList.toggle("sticky" , window.scrollY > 1);
 })
+const hamburger = document.getElementById("hamburger");
+const hamburgerClose = document.getElementById("hamburger-close");
+const nav = document.getElementById("menu-items");  
+hamburger.addEventListener('click', () => {
+  nav.style.display = 'flex';
+  nav.style.top = '0';  
+})
+hamburgerClose.addEventListener('click', () => {
+  nav.style.top = '-100%';
+})
+
 const counter0 = document.querySelectorAll(".choose-counter-numbers")[0];
 const counter1 = document.querySelectorAll(".choose-counter-numbers")[1];
 const counter2 = document.querySelectorAll(".choose-counter-numbers")[2];
 const speed0 = 250;
 const speed1 = 350;
 const speed2 = 100;
-const update0 = () =>{
+const update0 = () => {
     const target0 = +counter0.getAttribute("data-target");
     const count0 = +counter0.innerHTML;
     const inc0 = target0/speed0;
@@ -38,34 +49,22 @@ update0();
     const inc2 = target2/speed2;
     if(count2 < target2){
         counter2.innerHTML = Math.ceil(count2 +inc2);
-        setTimeout(update2,30);
+        setTimeout(update2,25);
     }else{
         count2.innerHTML = target2;
     }
  } 
  update2();
-let test = document.getElementById('testimonials-area');
-let control1 = document.getElementById('control1');
-let control2 = document.getElementById('control2')
-let control3 = document.getElementById('control3');
+const wrapper = document.querySelector('.wrapper');
+const indicators = [...document.querySelectorAll('.indicators button')];
 
-control1.onclick = function(){
-    test.style.transform = "translateX(870px)";
-    control1.classList.add("active");
-    control2.classList.remove("active");
-    control3.classList.remove("active");
-}
-control2.onclick = function(){
-    test.style.transform = "translateX(0px)";
-    control1.classList.remove("active");
-    control2.classList.add("active");
-    control3.classList.remove("active");
-}
-control3.onclick = function(){
-    test.style.transform = "translateX(-870px)";
-    control1.classList.remove("active");
-    control2.classList.remove("active");
-    control3.classList.add("active");
-}
+let currentTestimonial = 0;
 
-
+indicators.forEach((item, i) => {
+    item.addEventListener('click', () => {
+        indicators[currentTestimonial].classList.remove('active');
+        wrapper.style.marginLeft = `-${100 * i}%`;
+        item.classList.add('active');
+        currentTestimonial = i;
+    })
+}) 

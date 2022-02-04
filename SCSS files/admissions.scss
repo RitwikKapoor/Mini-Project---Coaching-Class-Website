@@ -10,11 +10,12 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden; 
   background-color: #e6e6e6;
+  overflow-x: hidden; 
 }
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 header{
     @include bg-all();
@@ -25,20 +26,22 @@ header{
   }
 }
   h1{
-      font-size: 5rem;
+      font-size: 4.5rem;
       color: #f4f4f4;
-      position: relative;
-      left:36%;
-      top: 25%;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
     }
 }
 .sticky {
   position: fixed;
   background-color: #000;
+  padding-top: 5px;
 }
 .text{
- margin-left: 6em;
- margin-right: 6em;
+ margin-left: 3.5em;
+ margin-right: 3.5em;
  margin-top: 3em;
   h2{
     font-size: 3.5rem;
@@ -85,3 +88,5 @@ header{
   @include footer-mixin();
 }
 @include copyright();
+
+@import "mediaNavFoot";

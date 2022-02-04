@@ -10,27 +10,29 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden; 
   background-color: #e6e6e6;
+  overflow-x: hidden;
 }
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 .header {
   background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.55)),
     url(/img---/classroom.jpg);
   background-size: cover;
   height: 95vh;
-nav {
-   @include navbar();
-   .menu-items{
-    @include nav-menu();
-}
+  nav {
+    @include navbar();
+    .menu-items {
+      @include nav-menu();
+    }
   }
-.sticky {
-  position: fixed;
-  background-color: #000;
-}
+  .sticky {
+    position: fixed;
+    background-color: #000;
+    padding-top: 5px;
+  }
   .text-heading {
     width: 100%;
     position: absolute;
@@ -38,8 +40,10 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    margin-left: 3px;
+    margin-right: 3px;
     h1 {
-      font-size: 4.8rem;
+      font-size: 4.5rem;
       color: #f4f4f4;
     }
     p {
@@ -53,12 +57,12 @@ nav {
   }
 }
 .about {
-  margin: 5em;
+  margin-top: 5em;
   margin-left: 7em;
   margin-right: 7em;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   .about-text {
+    flex: 50%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -84,20 +88,23 @@ nav {
     }
     .about-button button {
       @include button(1.5rem);
-      a{
+      a {
         color: #f4f4f4;
         font-weight: 700;
         text-decoration: none;
       }
     }
   }
-  .about-image img {
+  .about-image {
+    flex: 50%;
+  img {
     display: block;
     object-fit: cover;
     object-position: center;
-    height: 95%;
-    width: 100%;
-  }
+    height: 80%;
+    width: 100%;  
+  }  
+}
 }
 .choose-area {
   h2 {
@@ -114,7 +121,7 @@ nav {
       width: 30rem;
       align-items: center;
       height: 400px;
-      margin: 2px 30px;
+      margin: 25px 30px;
       box-shadow: 2px -2px 10px #888888;
       background-color: white;
       img {
@@ -141,14 +148,16 @@ nav {
   background-position: center;
   background-attachment: fixed;
   border-top: 4 px $light-grey-color solid;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
   align-items: center;
   .choose-counter-box {
     margin: 10em;
     .fas {
-      @include font-icons(10rem, #bab8b8);
+      font-size: 10rem;
+      color: #bab8b8;
     }
     h1 {
       color: $light-grey-color;
@@ -158,100 +167,150 @@ nav {
     }
     .choose-counter-numbers {
       color: $light-grey-color;
-      font-size: 3.2rem;
+      font-size: 3.1rem;
       font-weight: normal;
       padding-top: 0.5em;
     }
-    .choose-counter-numbers::after{
+    .choose-counter-numbers::after {
       content: "+";
       display: inline-block;
     }
   }
 }
- .testimonials{
-  margin-top: 0.7em;
-  margin-bottom: 10em;
-  h2{
+  
+  .test-heading{
     @include heading-style();
     position: relative;
     margin-bottom: 1em;
   }
-  .view-box{
-    width: 900px;
-    height: 410px;
-    position: absolute;
+
+  .testimonials{
+    width: 100%;
     display: flex;
-    align-items: center;
-    left: 18%;
     justify-content: center;
-    overflow:hidden;
-  #testimonials-area{  
-    display: flex;
-    transition: 0.5s;
-  .testimonials-box{
-    width: 800px;
-    text-align: center;
-    padding: 20px 70px;
-    box-sizing: border-box;
-    background-color: $light-color;
-    border-radius: 200px;
-    box-shadow: 0 10px 20px -5px #00000061;
+    align-items: center;
+    .container{
     position: relative;
-    color: $light-grey-color;
-    img{
-      width: 180px;
-      border-radius: 50%;
-      border: 10px solid #e6e6e6; 
-      position: absolute;
-      top: -95px;
-      left: 50%;
-      transform: translate(-50%);
-    }
-    h3{
-      font-size: 2.7rem;
-      padding-top: 0.5em;
-    }
-    h5{
-        font-weight: 550;
+    width: 700px;
+    min-width: 260px;
+    min-height: 250px;
+    padding-bottom: 40px;
+    overflow-x: hidden;
+    margin-left: 30px;
+    margin-right: 30px;
+    .wrapper{
+    width: 300%;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.5s;
+    .card{
+    min-height: 100%;
+    background-color: wheat;
+    color: black;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 20px;
+}
+.card img{
+    width: 180px;
+    height: 100px;
+    position: relative;
+    left:50%; 
+    transform: translateX(-50%);  
+    border-radius: 10%;
+}
+
+.card h3{
+    text-align: center;
+     font-size: 2.7rem;
+    padding-top: 0.5em;
+}
+.card h5{
+    text-align: center;
+    font-weight: 550;
         font-size: 1.7rem;
         padding-bottom: 0.8em;
-      }
-    p {
-      font-size:1.8rem;
-      padding-bottom: 2em; 
-    }
-  }
 }
-.controls{
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  span{
-  width:15px;
-  height:15px;
-  background-color: $dark-color;
-  border-radius: 15px;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: 0.5s;
-}
-}
-}
-}
- .space{
-   margin:0px 70px;
- }
- .active{
-   width: 45px !important;
- }
 
+.review{
+    line-height: 30px;
+    font-size:1.6rem;
+      padding-bottom: 2em; 
+      text-align: center;
+}
+}
+}
+}
+.rating{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.star{
+    width: 25px;
+    margin-right: 5px;
+}
+.indicators{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.indicators button{
+    background: none;
+    border: none;
+    outline: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #1f004f;;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: 0.5s;
+}
+button.active{
+    width: 40px;
+    border-radius: 50px;
+    background:#1f004f;;
+}
 .footer {
   background-color: black;
-  margin-top: 50em;
+  margin-top: 10em;
   padding-top: 2em;
   padding-bottom: 4em;
   @include footer-mixin();
 }
 @include copyright();
+
+@import "mediaNavFoot";
+
+@media (max-width:880px) {
+  .about{
+    display: flex;
+    flex-direction: column;
+    .about-text{
+      width: 100%;
+    }
+    .about-image img{
+      margin-top: 20px;
+      width: 100%;
+      height:60%;
+    }
+  }
+}
+@media only screen and (orientation: landscape) and (max-width : 850px){
+  .header .text-heading h1{
+    font-size: 3.2rem;
+  }
+  .header .text-heading p{
+    font-size: 1.5rem;
+  }
+}
+
+

@@ -10,11 +10,12 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden; 
   background-color: #e6e6e6;
+  overflow-x: hidden; 
 }
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 header{
     @include bg-all();
@@ -25,16 +26,88 @@ header{
   }
 }
   h1{
-      font-size: 5rem;
+      font-size: 4.5rem;
       color: #f4f4f4;
-      position: relative;
-      left:38%;
-      top: 25%;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
     }
+}
+.content{
+ margin-left: 3.5em;
+ margin-right: 3.5em;
+ margin-top: 3em;
+ h2{
+    font-size: 3.5rem;
+     text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    &::after{
+      @include under();
+      position: relative;
+    width:70px;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+  }
+  img{
+    margin: 15px 0px;
+    width:24rem;
+    height:18rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: black 2px solid;
+  }
+  h4{
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  .socials{
+    justify-content: center;
+    position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    .fab{
+      font-size: 20px;
+      margin-top: 10px;
+      margin-left: 10px;
+      background-color: white;
+      border-radius: 50%;
+       height: 40px;
+        width: 40px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        color: black;
+    }
+    #facebook{
+      &:hover{
+        background-color: #4267B2;
+        color: white;
+      }
+    }
+    #twitter{
+      &:hover{
+        background-color: 	#1DA1F2;
+        color: white;
+      }
+    }
+  }
+  .paras{
+      margin-top: 7em;
+      p{
+        padding-top: 10px;
+        font-size: 1.6rem;
+      }
+  }
 }
 .sticky {
   position: fixed;
   background-color: #000;
+  padding-top: 5px;
 }
 .footer{
   background-color: black;
@@ -44,3 +117,5 @@ header{
   @include footer-mixin();
 }
 @include copyright();
+
+@import "mediaNavFoot";

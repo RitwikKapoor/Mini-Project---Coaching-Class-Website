@@ -3,27 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />   -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Genius Classes</title>
     <link rel="stylesheet" href="/SCSS files/homestyle.css"/>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymou s">
     <script src="/JS files/home.js" defer></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   </head>
   <body>
     <section class="header">
       <nav id="navbar">
         <img src="/img---/GClogo.png" alt="logo" class="logo-image" />
-        <ul class="menu-items">
+         <button class ="hamburger" id = "hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu-items" id="menu-items">
           <li><a href="/HTML files/homepage.html"> Home </a></li>
           <li><a href="/HTML files/about.html"> About </a></li>
           <li><a href="/HTML files/courses.html"> Courses </a></li>
           <li><a href="/HTML files/admissions.html"> Admissions </a></li>
           <li><a href="/HTML files/contact.html"> Contact </a></li>
+          <button class ="hamburger-close" id = "hamburger-close">
+          <i class="fas fa-times"></i>
+        </button>
         </ul>
       </nav>
       <div class="text-heading">
-        <h1>Empowering Future Generations</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <h1>Preparing you for Tomorrow</h1>
+        <p>Learn from the best  </p>
         <a href="/HTML files/courses.html"> Explore Courses </a>
       </div>
     </section>
@@ -32,13 +39,7 @@
         <p>About Us</p>
         <h2>GENIUS CLASSES</h2>
         <p class="about-text-para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-          perspiciatis exercitationem sunt quisquam animi architecto enim ipsa
-          quam illo perferendis, sint et vero culpa nulla praesentium nemo ea
-          blanditiis nisi?<br /><br />Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Reprehenderit a, labore quae molestiae magni veniam
-          veritatis quibusdam suscipit porro praesentium blanditiis pariatur
-          facere, nostrum exercitationem. Blanditiis, est commodi? Sed, quae?
+       GENIUS CLASSES is one of the top institutes out there to prepare students for competitive examination. We provide excellent course material, experienced teacehers having experience of more than 10 years of teaching.<br><br>Genius Classes was established in year 2010 with the aim to provide high quality teaching to students at affordable prices.
         </p>
         <div class="about-button">
           <button> <a href="/HTML files/about.html"> Know More &#8594; </a></button>
@@ -92,7 +93,7 @@
     <section class="choose-counter">
       <div class="choose-counter-box">
         <i class="fas fa-user-graduate"></i>
-        <div class="choose-counter-numbers" data-target="10000">0</div>
+        <div class="choose-counter-numbers" data-target="9000">0</div>
         <h1 class="choose-counter-text">Students enrolled</h1>
       </div>
       <div class="choose-counter-box">
@@ -106,45 +107,42 @@
         <h1 class="choose-counter-text">Experienced Tutors</h1>
       </div>
     </section>
-    <section class="testimonials">
-        <h2> Student's <span>Testimonials</span> </h2>
-        <div class="view-box">
-        <div id="testimonials-area">
-        <div class="testimonials-box">
-          <img src ="/img---/girl2.jpg">
-          <h3>Rose</h3>
-          <h5>CBSE Class 9</h5>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur in ratione quas fugit, voluptas corrupti! Lorem ipsum dolor sit amet consectetur adipisicing.
-        </p>
+    <h2 class = "test-heading"> Student's <span>Testimonials</span> </h2>
+      <section class="testimonials">
+      <div class="container">
+        <div class="wrapper">
+            <div class="card">
+                    <img src="/img---/girl1.jpg" >
+                    <h3>Aditi Sharma</h3>
+                    <h5> AIR 789 - JEE Advanced</h5>
+                    <p class="review">Genius Classes have a pool of excellent faculty. They helped me to solve all my doubts and provided the best ways to solve the problems of JEE.</p>
+            </div>
+             <div class="card">
+                    <img src="/img---/girl2.jpg">
+                    <h3>Kritika Nair</h3>
+                    <h5> AIR 208 - NEET</h5>
+                    <p class="review">Revision classes are organized regularly which helped me to learn the vast syllabus of NEET efficiently.Regular tests helped me to evaluate my performance.</p>
+            </div>
+            <div class="card">
+                    <img src="/img---/boy1.jpg">
+                    <h3>  Arnav Sharma</h3>
+                    <h5> AIR 1013 - JEE Advanced </h5>
+                    <p class="review">The faculties teach all the concepts in a clear and detailed manner. Moreover, they give regular feedback to help us improve our performance.</p>
+            </div>
         </div>
-        <div class="testimonials-box space">
-          <img src ="/img---/girl1.jpg">
-          <h3>Jasmine</h3>
-          <h5>CBSE Class 10</h5>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur in ratione quas fugit, voluptas corrupti! Lorem ipsum dolor sit amet consectetur adipisicing.
-        </p>
+        <div class="indicators">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
         </div>
-         <div class="testimonials-box">
-          <img src ="/img---/boy1.jpg">
-          <h3>Rohan</h3>
-          <h5>CBSE Class 10</h5>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur in ratione quas fugit, voluptas corrupti! Lorem ipsum dolor sit amet consectetur adipisicing.
-        </p>
-        </div>
-        </div>  
-        <div class="controls">
-          <span id="control1"></span>
-          <span id="control2" class = "active"></span>
-          <span id="control3"></span>
-        </div>
-        </div>
-      </section>
-    <section class="footer">
+    </div>
+    </section>
+    <section class="footer" id = "footer">
       <div class="footer-whole">
         <div class="footer-logo">
           <img src="/img---/GClogo.png" />
           <p>
-            Address - Lorem ipsum dolor sit amet<br> consectetur, adipisicing elit. Nobis!
+           Flat No. 104, Ground Floor, Plot No. 718, Sector 5,<br>Vaishali, Ghaziabad, Uttar Pradesh 201010  
           </p>
         </div>
         <div class="footer-link">

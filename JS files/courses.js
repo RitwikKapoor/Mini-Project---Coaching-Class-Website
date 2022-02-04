@@ -3,6 +3,17 @@
     nav.classList.toggle("sticky" , window.scrollY > 1);
 })
 
+const hamburger = document.getElementById("hamburger");
+const hamburgerClose = document.getElementById("hamburger-close");
+const nav = document.getElementById("menu-items");  
+hamburger.addEventListener('click', () => {
+  nav.style.display = 'flex';
+  nav.style.top = '0';  
+})
+hamburgerClose.addEventListener('click', () => {
+  nav.style.top = '-100%';
+})
+
 const btns = document.querySelectorAll('.btn-is');
 const items = document.querySelectorAll('.card');
 for (let i = 0; i < btns.length; i++) {
@@ -22,3 +33,4 @@ for (let i = 0; i < btns.length; i++) {
         })
     } )
 }
+

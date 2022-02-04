@@ -5,34 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genius Classes</title>
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous" 
-    ></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="/SCSS files/about.css"/>
 </head>
 <body>
     <header>
         <nav id="navbar">
         <img src="/img---/GClogo.png" alt="logo" class="logo-image" />
-        <ul class="menu-items">
+         <button class ="hamburger" id = "hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu-items" id="menu-items">
           <li><a href="/HTML files/homepage.html"> Home </a></li>
           <li><a href="/HTML files/about.html"> About </a></li>
           <li><a href="/HTML files/courses.html"> Courses </a></li>
           <li><a href="/HTML files/admissions.html"> Admissions </a></li>
           <li><a href="/HTML files/contact.html"> Contact </a></li>
+          <button class ="hamburger-close" id = "hamburger-close">
+          <i class="fas fa-times"></i>
+        </button>
         </ul>
       </nav>
-      <h1>ABOUT US </h1>
+      <h1>ABOUT</h1>
     </header>
-
-<section class="footer">
+    <section class="content">
+      <h2> ALL ABOUT US</h2>
+      <img src ="/img---/professor.jpg">
+      <h4>Founder - Karan Rawat</h4>
+      <div class="socials"> 
+          <a href="https://twitter.com/explore" target="_blank"><i class="fab fa-twitter" id = "twitter"></i></a>
+       <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f" id = "facebook"></i></a> 
+      </div>
+      <div class="paras">
+      <p><b>GENIUS CLASSES</b> is one of the top institutes out there to prepare students for competitive examination. We provide excellent course material and sheets , experienced teacehers having experience of more than 10 years of teaching in their respective subjects and a commited management to make every process smooth for the students.</p>
+      <p>Genius Classes was established in year 2010 with the aim to provide high quality teaching to students at affordable prices. We have showed it again and again by providing excellent top rank year after year in competitive exams and boards.We make constant efforts to raise the bar of coaching and our expert faculty strives hard for the success of students.</p>
+      <p>
+       We have expert faculty that makes the toughest of the subjects as the child play. It goes a long way to expertise the skills and fine tuning of concepts. The classroom environment keeps the students focused and motivated. It is the most comfortable place where the students gain the most by learning through experts and clearing their doubts instantly. Our faculty are renowned experts, great motivators and a true friend who are ready to help the students as and when required.
+      </p>
+      <p>     
+We at Genius Classes provide high quality study materials in the form of well-printed assignments and booklets prepared by our expert staff. As the students came prepared with the study material, more intense classroom sessions packed with more advanced problems, tips & shortcuts is possible.
+      </p>
+      </div>
+    </section>
+<section class="footer" id="footer"> 
       <div class="footer-whole">
         <div class="footer-logo">
           <img src="/img---/GClogo.png" />
           <p>
-            Address - Lorem ipsum dolor sit amet<br> consectetur, adipisicing elit. Nobis!
+          Flat No. 104, Ground Floor, Plot No. 718, Sector 5,<br>Vaishali, Ghaziabad, Uttar Pradesh 201010  
           </p>
         </div>
         <div class="footer-link">
@@ -58,10 +78,20 @@
       <h2>Genius Classes &copy; all rights reserved</h2>
     </footer>    
 </body>
-<script>
+ <script>
         window.addEventListener("scroll" , function(){
     let nav = document.getElementById("navbar");
     nav.classList.toggle("sticky" , window.scrollY > 1);
+})
+const hamburger = document.getElementById("hamburger");
+const hamburgerClose = document.getElementById("hamburger-close");
+const nav = document.getElementById("menu-items");  
+hamburger.addEventListener('click', () => {
+  nav.style.display = 'flex';
+  nav.style.top = '0';  
+})
+hamburgerClose.addEventListener('click', () => {
+  nav.style.top = '-100%';
 })
     </script>
 </html>  
